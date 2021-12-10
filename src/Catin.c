@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define false 0
 #define true  1
@@ -101,6 +102,8 @@ i32 rand_index(i32 length)
 
 int main(void)
 {
+	srand((i32) time(0)); // @TODO@ Had to include `<time.h>` just for this! Ew!
+
 	char  entry_char_buffer[MAX_ENTRY_COUNT * MAX_ENTRY_SIZE];
 	char* entry_buffer[MAX_ENTRY_COUNT];
 	i32   entry_count = 0;
